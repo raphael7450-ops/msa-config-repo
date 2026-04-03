@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: user-service
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/user/**
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka/
